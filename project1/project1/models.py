@@ -6,6 +6,6 @@ class Customer(models.Model):
     email = models.EmailField(max_length =254)
 
 class Order(models.Model):
-    order_num = IntegerField()
-    date = DateField(auto_now_add=True)
+    order_num = models.IntegerField()
+    date_added = models.DateField(auto_now_add=True)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name ='customer' )
